@@ -34,7 +34,8 @@ Tudo isso rodando 100% **local** – ideal para estudos, demonstrações técnic
 > Exemplo da interface do Jasper em execução:
 
 <p align="center">
-  <img src="docs/jasper-screen.png" alt="Screenshot Jasper Spencer" width="850" />
+  <img width="1360" height="696" alt="Captura de tela 2025-11-26 165519" src="https://github.com/user-attachments/assets/43f45389-1934-4d6b-a196-d931b1063d60" />
+
 </p>
 
 > 💡 Dica: salve sua imagem em `docs/jasper-screen.png` (ou ajuste o caminho acima).
