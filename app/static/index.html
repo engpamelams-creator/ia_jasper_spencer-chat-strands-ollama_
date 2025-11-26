@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jasper Spencer – Assistente IA Local</title>
+
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+  <!-- SIDEBAR COMPLETA -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <span class="sidebar-logo-icon">J</span>
+        <div class="sidebar-logo-text">
+          <strong>Jasper</strong>
+          <small>Assistente IA Local</small>
+        </div>
+      </div>
+      <button id="closeSidebar" class="icon-btn" title="Fechar sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <button id="newChat" class="btn-new-chat">
+      <i class="fa-solid fa-plus"></i>
+      Nova conversa
+    </button>
+
+    <div class="sidebar-section-title">Histórico</div>
+    <div id="conversationList" class="conversation-list">
+      <!-- Conversas aparecerão aqui (JS) -->
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="sidebar-footer-btn">
+        <i class="fa-solid fa-gear"></i>
+        Configurações
+      </button>
+      <button class="sidebar-footer-btn">
+        <i class="fa-solid fa-circle-info"></i>
+        Sobre
+      </button>
+    </div>
+  </aside>
+
+  <!-- BOTÃO MOBILE PARA ABRIR SIDEBAR -->
+  <button id="openSidebar" class="open-sidebar-btn" title="Abrir menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <section class="main">
+
+    <header class="header">
+      <div class="title-area">
+        <img src="/static/avatar.png" class="avatar-header" alt="Avatar Jasper" />
+        <div>
+          <h1>Jasper Spencer</h1>
+          <span class="subtitle">Assistente IA Local • Powered by Ollama</span>
+        </div>
+      </div>
+
+      <div class="header-btns">
+        <button id="clearChat" class="icon-btn" title="Limpar conversa">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+
+        <button id="themeToggle" class="icon-btn" title="Alternar tema">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main id="chatContainer" class="chat-container">
+      <!-- Sugestões iniciais -->
+      <div class="suggestions">
+        <div class="suggestion-card" data-text="Me explique um conceito de programação de forma simples.">
+          <p>💻 Me explique um conceito de programação de forma simples.</p>
+        </div>
+        <div class="suggestion-card" data-text="Me ajude a criar um projeto full stack para o meu portfólio.">
+          <p>🚀 Me ajude a criar um projeto full stack para o meu portfólio.</p>
+        </div>
+        <div class="suggestion-card" data-text="Me dê ideias de automações com IA para pequenos negócios.">
+          <p>🤖 Me dê ideias de automações com IA para pequenos negócios.</p>
+        </div>
+        <div class="suggestion-card" data-text="Explique uma tecnologia como se eu fosse iniciante.">
+          <p>✨ Explique uma tecnologia como se eu fosse iniciante.</p>
+        </div>
+      </div>
+    </main>
+
+    <form id="chatForm" class="chat-input-area">
+
+      <!-- input hidden de arquivo -->
+      <input type="file" id="fileInput" accept=".pdf,.doc,.docx" hidden />
+
+      <button type="button" id="sendFile" class="file-btn" title="Enviar arquivo (PDF / DOCX)">
+        <i class="fa-solid fa-paperclip"></i>
+      </button>
+
+      <button type="button" id="voiceBtn" class="voice-btn" title="Falar com Jasper">
+        <i class="fa-solid fa-microphone"></i>
+      </button>
+
+      <input 
+        id="messageInput" 
+        type="text" 
+        placeholder="Digite sua mensagem..."
+        autocomplete="off"
+      />
+
+      <button type="submit" class="send-btn" aria-label="Enviar">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
